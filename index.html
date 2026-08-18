@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe Aroma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="hero">
+
+  <div class="topbar">
+
+    <div class="brand">
+      <h1>☕ Cafe Aroma</h1>
+      <p id="subtitle">გემრიელი საკვები და კარგი განწყობა</p>
+
+      <div class="rating">
+        ⭐ 4.8
+        <span>•</span>
+        <span id="openStatus">🟢 ღიაა</span>
+      </div>
+    </div>
+
+    <div class="languages">
+      <button onclick="changeLanguage('ka')" title="ქართული">🇬🇪</button>
+      <button onclick="changeLanguage('en')" title="English">🇬🇧</button>
+      <button onclick="changeLanguage('ru')" title="Русский">🇷🇺</button>
+    </div>
+
+  </div>
+
+  <div class="cafe-info">
+    <span id="address">📍 ბათუმი, გორგილაძის ქუჩა 25</span>
+    <span id="hours">🕒 09:00 - 23:00</span>
+  </div>
+
+  <div class="contact-buttons">
+    <a class="contact-btn primary" href="tel:+995555123456">📞 დარეკვა</a>
+    <a class="contact-btn" href="#" target="_blank">📷 Instagram</a>
+    <a class="contact-btn" href="https://maps.google.com/" target="_blank">📍 რუკაზე ნახვა</a>
+  </div>
+
+</header>
+
+<main>
+
+  <section class="search-section">
+    <input
+      type="text"
+      id="searchInput"
+      placeholder="🔎 მოძებნე კერძი..."
+      oninput="searchFood()"
+    >
+  </section>
+
+  <section class="categories">
+    <button class="category-btn active" onclick="filterCategory('all', this)" id="allBtn">ყველა</button>
+    <button class="category-btn" onclick="filterCategory('pizza', this)" id="pizzaBtn">🍕 პიცა</button>
+    <button class="category-btn" onclick="filterCategory('burger', this)" id="burgerBtn">🍔 ბურგერი</button>
+    <button class="category-btn" onclick="filterCategory('drink', this)" id="drinkBtn">🥤 სასმელები</button>
+    <button class="category-btn" onclick="filterCategory('dessert', this)" id="dessertBtn">🍰 დესერტი</button>
+  </section>
+
+  <section class="menu-grid">
+
+    <article class="food-card" data-category="pizza" data-name="მარგარიტა margherita маргарита">
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80" alt="Margherita Pizza">
+        <span class="badge popular" data-badge="popular">პოპულარული</span>
+      </div>
+
+      <div class="food-content">
+        <h3 data-ka="მარგარიტა" data-en="Margherita" data-ru="Маргарита">მარგარიტა</h3>
+
+        <p
+          data-ka="ტომატი, მოცარელა, ბაზილიკი"
+          data-en="Tomato, mozzarella, basil"
+          data-ru="Томат, моцарелла, базилик"
+        >
+          ტომატი, მოცარელა, ბაზილიკი
+        </p>
+
+        <div class="price">18 ₾</div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="pizza" data-name="პეპერონი pepperoni пепперони">
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=900&q=80" alt="Pepperoni Pizza">
+        <span class="badge new" data-badge="new">ახალი</span>
+      </div>
+
+      <div class="food-content">
+        <h3 data-ka="პეპერონი" data-en="Pepperoni" data-ru="Пепперони">პეპერონი</h3>
+
+        <p
+          data-ka="ტომატი, მოცარელა, პეპერონი"
+          data-en="Tomato, mozzarella, pepperoni"
+          data-ru="Томат, моцарелла, пепперони"
+        >
+          ტომატი, მოცარელა, პეპერონი
+        </p>
+
+        <div class="price">22 ₾</div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="burger" data-name="ჩიზბურგერი cheeseburger чизбургер">
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Cheeseburger">
+        <span class="badge popular" data-badge="popular">პოპულარული</span>
+      </div>
+
+      <div class="food-content">
+        <h3 data-ka="ჩიზბურგერი" data-en="Cheeseburger" data-ru="Чизбургер">ჩიზბურგერი</h3>
+
+        <p
+          data-ka="საქონლის ხორცი, ყველი, სალათი, სოუსი"
+          data-en="Beef, cheese, lettuce, sauce"
+          data-ru="Говядина, сыр, салат, соус"
+        >
+          საქონლის ხორცი, ყველი, სალათი, სოუსი
+        </p>
+
+        <div class="price">16 ₾</div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="drink" data-name="ლიმონათი lemonade лимонад">
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=80" alt="Lemonade">
+        <span class="badge new" data-badge="new">ახალი</span>
+      </div>
+
+      <div class="food-content">
+        <h3 data-ka="ლიმონათი" data-en="Lemonade" data-ru="Лимонад">ლიმონათი</h3>
+
+        <p
+          data-ka="ცივი ლიმონათი, 330 მლ"
+          data-en="Cold lemonade, 330 ml"
+          data-ru="Холодный лимонад, 330 мл"
+        >
+          ცივი ლიმონათი, 330 მლ
+        </p>
+
+        <div class="price">5 ₾</div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="drink" data-name="კაპუჩინო cappuccino капучино">
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=900&q=80" alt="Cappuccino">
+      </div>
+
+      <div class="food-content">
+        <h3 data-ka="კაპუჩინო" data-en="Cappuccino" data-ru="Капучино">კაპუჩინო</h3>
+
+        <p
+          data-ka="ესპრესო და რძის ქაფი"
+          data-en="Espresso with milk foam"
+          data-ru="Эспрессо с молочной пеной"
+        >
+          ესპრესო და რძის ქაფი
+        </p>
+
+        <div class="price">7 ₾</div>
+      </div>
+    </article>
+
+    <article class="food-card" data-category="dessert" data-name="ჩიზქეიქი cheesecake чизкейк">
+      <div class="image-wrap">
+        <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?auto=format&fit=crop&w=900&q=80" alt="Cheesecake">
+        <span class="badge popular" data-badge="popular">პოპულარული</span>
+      </div>
+
+      <div class="food-content">
+        <h3 data-ka="ჩიზქეიქი" data-en="Cheesecake" data-ru="Чизкейк">ჩიზქეიქი</h3>
+
+        <p
+          data-ka="კლასიკური ნაზი ჩიზქეიქი"
+          data-en="Classic creamy cheesecake"
+          data-ru="Классический нежный чизкейк"
+        >
+          კლასიკური ნაზი ჩიზქეიქი
+        </p>
+
+        <div class="price">9 ₾</div>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="qr-section">
+    <h2 id="qrTitle">ჩვენი QR მენიუ</h2>
+    <p id="qrText">დაასკანერე და გახსენი მენიუ ტელეფონიდან</p>
+    <div id="qrcode"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Cafe Aroma</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
+```
