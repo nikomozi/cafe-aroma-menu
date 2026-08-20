@@ -188,24 +188,36 @@ function openCustomize(foodName) {
     const modal = document.getElementById("customizeModal");
     const title = document.getElementById("customizeTitle");
 
-    title.textContent = "🍽️ " + foodName + " — შეცვლა";
+    let customizeWord = "შეცვლა";
 
-    let selectedCard = null;
+if (currentLanguage === "en") {
+    customizeWord = "Customize";
+}
 
-    document.querySelectorAll(".food-card").forEach(card => {
-        const nameElement = card.querySelector("h3");
+if (currentLanguage === "ru") {
+    customizeWord = "Изменить";
+}
 
-        if (
-            nameElement &&
-            nameElement.getAttribute("data-ka") === foodName
-        ) {
-            selectedCard = card;
-        }
-    });
+let selectedCard = null;
+let translatedFoodName = foodName;
 
-    if (!selectedCard) {
-        return;
+document.querySelectorAll(".food-card").forEach(card => {
+    const nameElement = card.querySelector("h3");
+
+    if (nameElement && nameElement.getAttribute("data-ka") === foodName) {
+        selectedCard = card;
+
+        translatedFoodName =
+            nameElement.getAttribute("data-" + currentLanguage) || foodName;
     }
+});
+
+if (!selectedCard) {
+    return;
+}
+
+title.textContent =
+    "🍽️ " + translatedFoodName + " — " + customizeWord;
 
     const description = selectedCard.querySelector("p");
 
