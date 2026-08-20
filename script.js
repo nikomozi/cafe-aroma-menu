@@ -154,3 +154,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+let selectedFood = "";
+
+function openCustomize(foodName) {
+    selectedFood = foodName;
+
+    const modal = document.getElementById("customizeModal");
+    const title = document.getElementById("customizeTitle");
+
+    title.textContent = "🍽️ " + foodName + " — შეცვლა";
+
+    modal.classList.add("active");
+}
+
+function closeCustomize() {
+    document.getElementById("customizeModal").classList.remove("active");
+}
+
+function saveCustomize() {
+    const checked = document.querySelectorAll(
+        "#customizeModal input[type='checkbox']:checked"
+    );
+
+    const choices = [];
+
+    checked.forEach(function(input) {
+        choices.push(input.value);
+    });
+
+    if (choices.length === 0) {
+        alert("ცვლილება არ აგირჩევია");
+        return;
+    }
+
+    alert(
+        selectedFood +
+        "\n\nარჩეულია:\n• " +
+        choices.join("\n• ")
+    );
+
+    closeCustomize();
+}

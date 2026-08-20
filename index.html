@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafe Aroma</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -84,8 +89,13 @@
           ტომატი, მოცარელა, ბაზილიკი
         </p>
 
-        <div class="price">18 ₾</div>
-      </div>
+       <div class="price">18 ₾</div>
+
+<button class="customize-btn" onclick="openCustomize('მარგარიტა')">
+    ⚙️ შეცვლა
+</button>
+
+</div>
     </article>
 
     <article class="food-card" data-category="pizza" data-name="პეპერონი pepperoni пепперони">
@@ -106,8 +116,13 @@
         </p>
 
         <div class="price">22 ₾</div>
-      </div>
-    </article>
+
+<button class="customize-btn" onclick="openCustomize('პეპერონი')">
+    ⚙️ შეცვლა
+</button>
+
+</div>
+</article>
 
     <article class="food-card" data-category="burger" data-name="ჩიზბურგერი cheeseburger чизбургер">
       <div class="image-wrap">
@@ -126,9 +141,14 @@
           საქონლის ხორცი, ყველი, სალათი, სოუსი
         </p>
 
-        <div class="price">16 ₾</div>
-      </div>
-    </article>
+        <<div class="price">16 ₾</div>
+
+<button class="customize-btn" onclick="openCustomize('ჩიზბურგერი')">
+    ⚙️ შეცვლა
+</button>
+
+</div>
+</article>
 
     <article class="food-card" data-category="drink" data-name="ლიმონათი lemonade лимонад">
       <div class="image-wrap">
@@ -205,10 +225,56 @@
 <footer>
   <p>© 2026 Cafe Aroma</p>
 </footer>
+<div id="customizeModal" class="customize-modal">
+    <div class="customize-box">
 
+        <button class="close-btn" onclick="closeCustomize()">✕</button>
+
+        <h2 id="customizeTitle">კერძის შეცვლა</h2>
+
+        <h3>🚫 რის გარეშე?</h3>
+
+        <label>
+            <input type="checkbox" value="ხახვი">
+            ხახვის გარეშე
+        </label>
+
+        <label>
+            <input type="checkbox" value="სოუსი">
+            სოუსის გარეშე
+        </label>
+
+        <label>
+            <input type="checkbox" value="ყველი">
+            ყველის გარეშე
+        </label>
+
+        <label>
+            <input type="checkbox" value="პიკანტური">
+            პიკანტურის გარეშე
+        </label>
+
+        <h3>➕ დამატებით</h3>
+
+        <label>
+            <input type="checkbox" value="დამატებითი ყველი">
+            დამატებითი ყველი +2 ₾
+        </label>
+
+        <label>
+            <input type="checkbox" value="დამატებითი სოუსი">
+            დამატებითი სოუსი +1 ₾
+        </label>
+
+        <button class="save-customize" onclick="saveCustomize()">
+            ✓ არჩევის შენახვა
+        </button>
+
+    </div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="script.js"></script>
 
 </body>
 </html>
-```
+
