@@ -1,3 +1,4 @@
+// Cafe Aroma script update
 let currentLanguage = "ka";
 let currentCategory = "all";
 
