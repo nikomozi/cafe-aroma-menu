@@ -46,8 +46,8 @@ noChoice: "ცვლილება არ აგირჩევია"
     popular: "Popular",
     new: "New",
     qrTitle: "Our QR Menu",
-    qrText: "Scan and open the menu on your phone"
-  customizeTitle: "Customize",
+    qrText: "Scan and open the menu on your phone",
+customizeTitle: "Customize",
 removeTitle: "🚫 Remove ingredients",
 extrasTitle: "➕ Extras",
 extraCheese: "Extra cheese +2 ₾",
