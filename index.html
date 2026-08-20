@@ -232,25 +232,25 @@
 
         <h2 id="customizeTitle">კერძის შეცვლა</h2>
 
-        <h3>🚫 რის გარეშე?</h3>
+        <h3 id="removeTitle">🚫 რის გარეშე?</h3>
 
-        <div id="removeOptions"></div>
+<div id="removeOptions"></div>
 
-        <h3>➕ დამატებით</h3>
+<h3 id="extrasTitle">➕ დამატებით</h3>
 
-        <label>
-            <input type="checkbox" value="დამატებითი ყველი">
-            დამატებითი ყველი +2 ₾
-        </label>
+<label>
+    <input type="checkbox" value="დამატებითი ყველი">
+    <span id="extraCheeseText">დამატებითი ყველი +2 ₾</span>
+</label>
 
-        <label>
-            <input type="checkbox" value="დამატებითი სოუსი">
-            დამატებითი სოუსი +1 ₾
-        </label>
+<label>
+    <input type="checkbox" value="დამატებითი სოუსი">
+    <span id="extraSauceText">დამატებითი სოუსი +1 ₾</span>
+</label>
 
-        <button class="save-customize" onclick="saveCustomize()">
-            ✓ არჩევის შენახვა
-        </button>
+<button id="saveChoice" class="save-customize" onclick="saveCustomize()">
+    ✓ არჩევის შენახვა
+</button>
 
     </div>
 </div>

@@ -19,8 +19,15 @@ const translations = {
     popular: "პოპულარული",
     new: "ახალი",
     qrTitle: "ჩვენი QR მენიუ",
-    qrText: "დაასკანერე და გახსენი მენიუ ტელეფონიდან"
-  },
+    qrText: "დაასკანერე და გახსენი მენიუ ტელეფონიდან",
+customizeTitle: "შეცვლა",
+removeTitle: "🚫 რის გარეშე?",
+extrasTitle: "➕ დამატებით",
+extraCheese: "დამატებითი ყველი +2 ₾",
+extraSauce: "დამატებითი სოუსი +1 ₾",
+saveChoice: "✓ არჩევის შენახვა",
+noChoice: "ცვლილება არ აგირჩევია"
+},
 
   en: {
     subtitle: "Delicious food and good mood",
@@ -40,9 +47,16 @@ const translations = {
     new: "New",
     qrTitle: "Our QR Menu",
     qrText: "Scan and open the menu on your phone"
-  },
+  customizeTitle: "Customize",
+removeTitle: "🚫 Remove ingredients",
+extrasTitle: "➕ Extras",
+extraCheese: "Extra cheese +2 ₾",
+extraSauce: "Extra sauce +1 ₾",
+saveChoice: "✓ Save selection",
+noChoice: "No changes selected"
+},
 
-  ru: {
+ru: {
     subtitle: "Вкусная еда и хорошее настроение",
     openStatus: "🟢 Открыто",
     address: "📍 Батуми, улица Горгиладзе 25",
@@ -59,8 +73,15 @@ const translations = {
     popular: "Популярное",
     new: "Новинка",
     qrTitle: "Наше QR-меню",
-    qrText: "Отсканируйте код и откройте меню на телефоне"
-  }
+  qrText: "Отсканируйте код и откройте меню на телефоне",
+customizeTitle: "Изменить",
+removeTitle: "🚫 Убрать ингредиенты",
+extrasTitle: "➕ Дополнительно",
+extraCheese: "Дополнительный сыр +2 ₾",
+extraSauce: "Дополнительный соус +1 ₾",
+saveChoice: "✓ Сохранить выбор",
+noChoice: "Изменения не выбраны"
+}
 };
 
 function changeLanguage(lang) {
@@ -83,6 +104,11 @@ function changeLanguage(lang) {
 
   document.getElementById("qrTitle").textContent = t.qrTitle;
   document.getElementById("qrText").textContent = t.qrText;
+  document.getElementById("removeTitle").textContent = t.removeTitle;
+  document.getElementById("extrasTitle").textContent = t.extrasTitle;
+  document.getElementById("extraCheeseText").textContent = t.extraCheese;
+  document.getElementById("extraSauceText").textContent = t.extraSauce;
+  document.getElementById("saveChoice").textContent = t.saveChoice;
 
   const contactButtons = document.querySelectorAll(".contact-btn");
 
