@@ -184,9 +184,9 @@ function openCustomize(foodName) {
     const description = selectedCard.querySelector("p");
 
     const ingredients = description
-        .getAttribute("data-ka")
-        .split(",")
-        .map(item => item.trim());
+    .getAttribute("data-" + currentLanguage)
+    .split(",")
+    .map(item => item.trim());
 
     const options = document.getElementById("removeOptions");
 
@@ -200,7 +200,21 @@ function openCustomize(foodName) {
         checkbox.value = ingredient;
 
         label.appendChild(checkbox);
-        label.append(" " + ingredient + "-ს გარეშე");
+       let removeText = "";
+
+if (currentLanguage === "ka") {
+    removeText = ingredient + "-ს გარეშე";
+}
+
+if (currentLanguage === "en") {
+    removeText = "Without " + ingredient;
+}
+
+if (currentLanguage === "ru") {
+    removeText = "Без " + ingredient;
+}
+
+label.append(" " + removeText);
 
         options.appendChild(label);
     });
