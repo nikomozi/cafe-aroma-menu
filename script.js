@@ -164,9 +164,49 @@ function openCustomize(foodName) {
 
     title.textContent = "🍽️ " + foodName + " — შეცვლა";
 
+    let selectedCard = null;
+
+    document.querySelectorAll(".food-card").forEach(card => {
+        const nameElement = card.querySelector("h3");
+
+        if (
+            nameElement &&
+            nameElement.getAttribute("data-ka") === foodName
+        ) {
+            selectedCard = card;
+        }
+    });
+
+    if (!selectedCard) {
+        return;
+    }
+
+    const description = selectedCard.querySelector("p");
+
+    const ingredients = description
+        .getAttribute("data-ka")
+        .split(",")
+        .map(item => item.trim());
+
+    const options = document.getElementById("removeOptions");
+
+    options.innerHTML = "";
+
+    ingredients.forEach(ingredient => {
+        const label = document.createElement("label");
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.value = ingredient;
+
+        label.appendChild(checkbox);
+        label.append(" " + ingredient + "-ს გარეშე");
+
+        options.appendChild(label);
+    });
+
     modal.classList.add("active");
 }
-
 function closeCustomize() {
     document.getElementById("customizeModal").classList.remove("active");
 }
