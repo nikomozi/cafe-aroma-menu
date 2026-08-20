@@ -1,4 +1,3 @@
-// Cafe Aroma script update
 let currentLanguage = "ka";
 let currentCategory = "all";
 
@@ -117,9 +116,9 @@ function changeLanguage(lang) {
   if (contactButtons[1]) contactButtons[1].textContent = t.instagram;
   if (contactButtons[2]) contactButtons[2].textContent = t.map;
 
-  document.querySelectorAll("[data-ka][data-en][data-ru]").forEach(element => {
+  document.querySelectorAll("h3[data-ka][data-en][data-ru], p[data-ka][data-en][data-ru]").forEach(element => {
     element.textContent = element.getAttribute("data-" + lang);
-  });
+});
 
   document.querySelectorAll("[data-badge]").forEach(badge => {
     const type = badge.getAttribute("data-badge");
